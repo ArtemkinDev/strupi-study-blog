@@ -21,7 +21,7 @@
     "pg-connection-string": "^2.5.0"
   },
   "workspaces": [
-    "plugins/*"
+    "./src/plugins/github-projects"
   ],
   "author": {
     "name": "A Strapi developer"
