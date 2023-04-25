@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_seo_basic_seo_infos",
+  "info": {
+    "displayName": "Basic seo info"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}
