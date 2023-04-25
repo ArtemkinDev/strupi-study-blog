@@ -20,6 +20,9 @@
     "pg": "^8.8.0",
     "pg-connection-string": "^2.5.0"
   },
+  "workspaces": [
+    "plugins/*"
+  ],
   "author": {
     "name": "A Strapi developer"
   },
