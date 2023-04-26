@@ -71,6 +71,18 @@
       "relation": "manyToMany",
       "target": "api::post.post",
       "inversedBy": "likedBy"
+    },
+    "user_schedules": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::user-schedule.user-schedule",
+      "mappedBy": "user"
+    },
+    "invite_schedules": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::user-schedule.user-schedule",
+      "mappedBy": "members"
     }
   }
 }

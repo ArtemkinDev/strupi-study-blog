@@ -1,0 +1,60 @@
+{
+  "kind": "collectionType",
+  "collectionName": "user_schedules",
+  "info": {
+    "singularName": "user-schedule",
+    "pluralName": "user-schedules",
+    "displayName": "UserSchedule",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "startTime": {
+      "required": true,
+      "type": "datetime"
+    },
+    "endTime": {
+      "type": "datetime",
+      "required": true
+    },
+    "isAllDay": {
+      "type": "boolean",
+      "default": false
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "user_schedules",
+      "required": true
+    },
+    "members": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "invite_schedules"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "repeat": {
+      "type": "enumeration",
+      "enum": [
+        "never",
+        "daily",
+        "weekly",
+        "monthly",
+        "yearly"
+      ],
+      "default": "never"
+    }
+  }
+}
