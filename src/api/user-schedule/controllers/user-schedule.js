@@ -22,4 +22,9 @@ module.exports = createCoreController('api::user-schedule.user-schedule', ({ str
 
     return this.transformResponse(data, { pagination });
   },
+
+  // async create(ctx) {
+  //   console.log(ctx.request.body);
+  //   return true;
+  // },
 }));
