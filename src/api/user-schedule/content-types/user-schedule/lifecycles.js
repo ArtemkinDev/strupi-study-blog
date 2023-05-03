@@ -4,9 +4,9 @@ module.exports = {
   async beforeCreate(event) {
     const { data, where, select, populate } = event.params;
     let userId = data.user.connect && data.user.connect[0]?.id ? data.user.connect[0].id : null;
-
+    console.log(data);
     userId = data.user && !userId ? data.user : null;
-
+    console.log(userId);
     if (!userId) throw new ForbiddenError('Please choose user!');
 
     const { startTime, endTime } = data;
@@ -33,5 +33,7 @@ module.exports = {
     if (events.length) {
       throw new ForbiddenError('You have events at this time. Please choose other time period!');
     }
+
+    throw new ForbiddenError('Test error');
   },
 };
